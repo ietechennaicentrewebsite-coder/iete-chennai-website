@@ -56,6 +56,7 @@ strong{color:var(--ink)}
 /* ---------------------------------------------------------------- masthead */
 .masthead{background:var(--paper);padding:1.15rem 0 1rem}
 .masthead .wrap{display:flex;align-items:center;gap:1.15rem}
+.masthead .wrap > a{flex:none;display:block;line-height:0}
 .masthead .emblem{width:66px;flex:none}
 .mast-name{flex:1 1 auto;min-width:0}
 .mast-name .inst{
@@ -81,12 +82,17 @@ strong{color:var(--ink)}
 .mast-rule + .mast-rule{height:1px;background:var(--navy);opacity:.35;margin-top:2px}
 @media (max-width:900px){
   .mast-contact{display:none}
-  .masthead .emblem{width:54px}
-  .mast-badge{height:60px;margin-left:0}
+  /* the emblem is a fine-line triangle: at 54px it read as spindly beside a
+     three-line title and the much heavier gold badge. Sized up, badge eased
+     down, so the two marks flanking the name carry comparable weight. */
+  .masthead .emblem{width:58px}
+  .mast-badge{height:54px;margin-left:0}
 }
 @media (max-width:560px){
-  .masthead .wrap{gap:.8rem}
-  .mast-badge{height:48px}
+  .masthead{padding:1rem 0 .9rem}
+  .masthead .wrap{gap:.85rem}
+  .masthead .emblem{width:52px}
+  .mast-badge{height:46px}
   .mast-est{font-size:.72rem}
 }
 
